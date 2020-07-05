@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+
+  plano:
+    #build:
+    #  context: ../
+    #  dockerfile: ./.docker/Dockerfile
+    image: taylorlopes/plano:1.0
+    container_name: plano
+    environment:
+      - ENVWORK=prd
+    volumes:
+      - ../:/var/www
+      - app-data:/db
+    ports:
+      - "4488:443"
+    restart: always
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    external: true
+
+volumes:
+  app-data:
