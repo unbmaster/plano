@@ -22,7 +22,7 @@ class PlanoController
         # Recupera id do plano, caso exista
         $uri = $request->getUri('id')->getQuery();
         parse_str($uri, $filters);
-        $id = ($filters) ? explode(',', $filters['id']) : [];
+        $id = (isset($filters['id'])) ? explode(',', $filters['id']) : [];
 
         # Chama o caso de uso correspondente
         $planos = (new \Application\ObterPlanos)($id);
