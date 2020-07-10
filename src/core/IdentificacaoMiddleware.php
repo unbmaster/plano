@@ -26,6 +26,8 @@ class IdentificacaoMiddleware
         $response = $handler->handle($request);
         $token = JWT::getTokenFromHeader($request);
 
+        if(!$token) $token = filter_var($_REQUEST['token'], FILTER_SANITIZE_STRING);
+
         if ($token && JWT::isValidToken($token) && JWT::isUserRole($token)) {
             $response = $response->withHeader('Authorization',  "Bearer $token");
         }
