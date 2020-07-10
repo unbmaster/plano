@@ -6,7 +6,7 @@
  * License GNU General Public License (GPL)
  */
 
-namespace Controller;
+namespace Controller\v2;
 
 /**
  * planosController class
