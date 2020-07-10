@@ -23,7 +23,7 @@ $auth = new Core\IdentificacaoMiddleware;
 
 $app->add(new Core\CorrelationIdMiddleware);
 
-$app->get('/v1/planos[/]', 'Controller\PlanoController:planos')->add($auth);
+$app->get('/v1/planos[/]', 'Controller\v1\PlanoController:planos')->add($auth);
 
 $app->any( '/v1/plano', 'Controller\v1\HomeController');
 
