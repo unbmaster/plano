@@ -9,7 +9,7 @@
 /**
  * Ponto central das requisições e rotas de acesso aos serviços
  * @author UnBMaster <unbmaster@outlook.com>
- * @version 0.1.0 ok 1
+ * @version 0.1.0
  */
 
 ini_set('display_errors', true);
@@ -23,8 +23,8 @@ $auth = new Core\IdentificacaoMiddleware;
 
 $app->add(new Core\CorrelationIdMiddleware);
 
-$app->get('/planos[/]', 'Controller\PlanoController:planos')->add($auth);
+$app->get('/v1/planos[/]', 'Controller\PlanoController:planos')->add($auth);
 
-$app->any( '/plano', 'Controller\HomeController:api');
+$app->any( '/v1/plano', 'Controller\HomeController:api');
 
 $app->run();
