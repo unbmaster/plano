@@ -9,7 +9,7 @@
 /**
  * Ponto central das requisições e rotas de acesso aos serviços
  * @author UnBMaster <unbmaster@outlook.com>
- * @version 0.1.0
+ * @version 0.1.0 
  */
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
