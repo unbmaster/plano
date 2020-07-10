@@ -24,7 +24,7 @@ use Core\{IP, Env};
  */
 class HomeController
 {
-    public static function index($request, $response)
+    public function __invoke($request, $response)
     {
         $env = new Env();
 
