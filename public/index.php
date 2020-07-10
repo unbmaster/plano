@@ -25,6 +25,8 @@ $app->add(new Core\CorrelationIdMiddleware);
 
 $app->get('/v1/planos[/]', 'Controller\PlanoController:planos')->add($auth);
 
-$app->any( '/v1/plano', 'Controller\HomeController');
+$app->any( '/v1/plano', 'Controller\v1\HomeController');
+
+$app->any( '/v2/plano', 'Controller\v2\HomeController');
 
 $app->run();
