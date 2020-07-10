@@ -12,7 +12,6 @@
  * @version 0.1.0
  */
 
-exit('Ok PLANO!');
 
 ini_set('display_errors', true);
 require __DIR__ . '/../vendor/autoload.php';
