@@ -36,7 +36,8 @@ class HomeController
             'container-id'  => $container,
             'environment'   => $env('envwork'),
             'ip-server' => $_SERVER['SERVER_ADDR'],
-            'ip-client' => IP::get()
+            'ip-client' => IP::get(),
+            'api-version' => '1'
         ];
 
         $payload = json_encode($data);

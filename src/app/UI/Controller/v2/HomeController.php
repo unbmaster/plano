@@ -37,7 +37,7 @@ class HomeController
             'environment'   => $env('envwork'),
             'ip-server' => $_SERVER['SERVER_ADDR'],
             'ip-client' => IP::get(),
-            'message' => 'Esta é a versão 2',
+            'api-version' => '2'
         ];
 
         $payload = json_encode($data);
