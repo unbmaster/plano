@@ -16,9 +16,13 @@ COPY ./docker/php/custom-php.ini        /etc/php/7.3/cli/php.ini
 COPY ./                                 /var/www
 
 # SQLite
-RUN mkdir -p /var/lib/docker/volumes/db
-COPY ./docker/sqlite                    /var/lib/docker/volumes/db
-RUN sqlite3 /var/lib/docker/volumes/db/plano.db < /var/lib/docker/volumes/db/plano.sql
+#RUN mkdir -p /db
+#COPY ./docker/sqlite                    /var/lib/docker/volumes/db
+#RUN sqlite3 /var/lib/docker/volumes/db/plano.db < /var/lib/docker/volumes/db/plano.sql
+
+#RUN mkdir -p /db
+COPY ./docker/sqlite                    /db
+RUN sqlite3 /db/plano.db < /db/plano.sql
 
 COPY ./docker/build.sh                  /
 RUN chmod +x /build.sh
