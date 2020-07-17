@@ -21,9 +21,9 @@ COPY ./                                 /var/www
 #RUN sqlite3 /var/lib/docker/volumes/db/plano.db < /var/lib/docker/volumes/db/plano.sql
 
 RUN mkdir -p /db
-COPY docker/sqlite                    /db
+COPY ./docker/sqlite                    /db
 RUN sqlite3 /db/plano.db < /db/plano.sql
 
-COPY docker/build.sh                  /
+COPY ./docker/build.sh                  /
 RUN chmod +x /build.sh
 CMD ["/build.sh"]
