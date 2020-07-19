@@ -20,7 +20,7 @@ COPY ./                                 /var/www
 #COPY ./docker/sqlite                    /var/lib/docker/volumes/db
 #RUN sqlite3 /var/lib/docker/volumes/db/plano.db < /var/lib/docker/volumes/db/plano.sql
 
-#RUN mkdir -p /db
+RUN mkdir -p /db
 #COPY ./docker/sqlite                    /db
 #RUN sqlite3 /db/plano.db < /db/plano.sql
 
