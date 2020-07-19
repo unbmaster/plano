@@ -15,7 +15,7 @@ COPY ./docker/php/custom-www.conf       /etc/php/7.3/fpm/pool.d/www.conf
 COPY ./docker/php/custom-php.ini        /etc/php/7.3/cli/php.ini
 COPY ./                                 /var/www
 
-
+RUN mkdir -p /db
 RUN chmod 777 -R /db && chmod o+t -R /db
 # SQLite
 #RUN mkdir -p /db
